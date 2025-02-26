@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="employee_feedback_view_form" model="ir.ui.view">
+            <field name="name">Employee Feedback</field>
+            <field name="model">employee.feedback</field>
+            <field name="arch" type="xml">
+                <form string="Employee Feedback">
+                    <sheet>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="feedback"/>
+                            <field name="date_submitted"/>
+                            <field name="status" widget="statusbar"/>
+                            <field name="category"/>
+                            <field name="rating" widget="rating"/>
+                            <field name="attachments" widget="many2many_binary"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="employee_feedback_view_tree" model="ir.ui.view">
+            <field name="name">Employee Feedback</field>
+            <field name="model">employee.feedback</field>
+            <field name="arch" type="xml">
+                <tree string="Employee Feedback">
+                    <field name="employee_id"/>
+                    <field name="feedback"/>
+                    <field name="date_submitted"/>
+                    <field name="status" widget="statusbar"/>
+                    <field name="category"/>
+                    <field name="rating" widget="rating"/>
+                    <field name="attachments" widget="many2many_binary"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="employee_feedback_action" model="ir.actions.act_window">
+            <field name="name">Employee Feedback</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">employee.feedback</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_employee_feedback"
+                  name="Employee Feedback"
+                  action="employee_feedback_action"
+                  sequence="1"/>
+    </data>
+</odoo>

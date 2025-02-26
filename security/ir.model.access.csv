@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_employee_feedback,access.employee.feedback,model_employee_feedback,base.group_user,1,1,1,1
+
+
+
+
